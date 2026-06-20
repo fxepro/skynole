@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   Design token layer — single source of truth for visual values.
+   Pages/components reference token names only (never raw hex).
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  /* Brand — sky blue (aerial / autonomy) */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+
+  /* Accent — cyan highlight */
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+
+  /* Ink — slate text/surfaces */
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+
+  /* Type */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif,
+    sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Base layer — global element defaults (16px body floor).
+   ───────────────────────────────────────────────────────────── */
+@layer base {
+  body {
+    @apply bg-surface font-sans text-base text-ink-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold tracking-tight text-ink-900;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Component utilities — reusable design-layer classes.
+   ───────────────────────────────────────────────────────────── */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3
+      text-sm font-semibold transition-colors focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-secondary {
+    @apply bg-ink-900 text-white hover:bg-ink-800;
+  }
+  .btn-ghost {
+    @apply text-ink-800 hover:text-brand-600;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase
+      tracking-[0.18em] text-brand-600;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-200 bg-white p-6 shadow-sm;
+  }
+
+  .section {
+    @apply py-20 sm:py-24;
+  }
+}
