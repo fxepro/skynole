@@ -1,0 +1,14 @@
+# Netlify configuration for the Skynole Next.js site.
+# The repo root IS the Next app, so no `base` is set.
+# Netlify uses the official @netlify/plugin-nextjs runtime (App Router + SSR + ISR).
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Next.js 16 requires Node 20.9+. Pin to match local development.
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
