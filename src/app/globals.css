@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "../**/*.{ts,tsx}";
+
 /* ─────────────────────────────────────────────────────────────
    Design token layer — single source of truth for visual values.
    Pages/components reference token names only (never raw hex).
@@ -89,5 +91,18 @@
 
   .section {
     @apply py-20 sm:py-24;
+  }
+
+  .banner-surface {
+    background-color: var(--color-ink-900);
+    color: #fff;
+  }
+
+  .banner-surface h1 {
+    color: #fff;
+  }
+
+  .banner-surface-light {
+    @apply bg-gradient-to-b from-brand-50 to-white text-ink-900;
   }
 }

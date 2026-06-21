@@ -45,7 +45,7 @@ export function FeatureSplits({
               >
                 <div
                   className={cn(
-                    "relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-brand-50 to-ink-100 ring-1 ring-ink-200",
+                    "relative aspect-[4/3] overflow-hidden rounded-3xl bg-ink-100 ring-1 ring-ink-200",
                     reverse && "lg:order-2",
                   )}
                 >
@@ -54,7 +54,7 @@ export function FeatureSplits({
                     alt={item.image.alt}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-contain p-6"
+                    className="object-cover"
                   />
                 </div>
                 <div className={cn(reverse && "lg:order-1")}>

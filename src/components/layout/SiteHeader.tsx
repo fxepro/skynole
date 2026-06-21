@@ -21,7 +21,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink-200 bg-white/80 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between gap-6">
+      <Container className="flex h-[4.25rem] items-center justify-between gap-6">
         <Logo />
 
         <nav
@@ -33,7 +33,7 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors",
+                "text-base font-medium transition-colors",
                 isActive(pathname, item.href)
                   ? "text-brand-600"
                   : "text-ink-600 hover:text-ink-900",
@@ -89,7 +89,7 @@ export function SiteHeader() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-base font-medium",
+                  "rounded-lg px-3 py-2.5 text-lg font-medium",
                   isActive(pathname, item.href)
                     ? "bg-brand-50 text-brand-700"
                     : "text-ink-700 hover:bg-ink-100",

@@ -40,13 +40,13 @@ export function SolutionsShowcase({
               href={item.href}
               className="group relative flex flex-col overflow-hidden rounded-3xl bg-white ring-1 ring-ink-200 transition-shadow hover:shadow-xl"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-brand-50 to-ink-100">
+              <div className="relative aspect-[4/3] overflow-hidden bg-ink-100">
                 <Image
                   src={item.image.src}
                   alt={item.image.alt}
                   fill
                   sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-contain p-6 transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/sections/PageHeader";
-import { ComingSoon } from "@/components/sections/ComingSoon";
+import { ProseDocument } from "@/components/sections/ProseDocument";
+import { termsOfUse } from "@/content/legal/terms-of-use";
 
 export const metadata: Metadata = { title: "Terms of Use" };
 
 export default function TermsOfUsePage() {
   return (
     <>
-      <PageHeader eyebrow="Legal" title="Website Terms of Use" />
-      <ComingSoon />
+      <PageHeader eyebrow={termsOfUse.eyebrow} title={termsOfUse.title} />
+      <ProseDocument document={termsOfUse} />
     </>
   );
 }
